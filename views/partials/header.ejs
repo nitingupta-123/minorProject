@@ -1,0 +1,113 @@
+<!-- <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <nav>
+    <h1><a href="/">Nitin's Smoothies</a></h1>
+    <ul>
+      <% if (user) { %>
+        <li>Welcome, <%= user.email %></li>
+        <li><a href="/logout">Log out</a></li>
+      <% } else { %>
+        <li><a href="/login">Log in</a></li>
+        <li><a href="/verify" class="btn">Sign up</a></li>
+      <% } %>
+    </ul>
+  </nav> -->
+
+
+
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+       
+
+       /* .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #806466 !important; */
+
+    .btn-outline-primary:hover {
+      background-color:#fcebdc;
+      
+    }
+
+    .a:hover{
+      color: #582bbb ;
+    }
+
+    </style>
+    
+
+</head>
+
+
+<body>
+    <!-- Navbar  -->
+
+
+
+
+    <nav class="navbar fixed-top navbar-expand-sm navbar-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand mr-auto" href="/"><img src="../images/heartlogo.png" alt="Ristorante Con Fusion" height="50"
+                    width="51"></a>
+
+
+            <div class="collapse navbar-collapse" id="Navbar">
+
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/prediction">Disease Predication</a>
+                    </li>
+                </ul>
+
+                <span class="">
+
+                    <!-- <a id="login-Modal-btn" >
+
+                        <span class="fa fa-sign-in"></span> Login/SignUp</a> -->
+
+
+                        <% if (user) { %>
+                          <span class="text-white">Welcome, <%= user.email %></span>
+                          <button type="button" class="btn btn-outline-primary"><a style="text-decoration: none;" href="/logout">Log out</a></button>
+
+                          
+                        <% } else { %>
+                          <button type="button"  class="btn btn-outline-primary"><a style="text-decoration: none;" href="/login">Login</a></button>
+                          <button type="button"  class="btn btn-outline-primary"><a style="text-decoration: none;" href="/verify">SignUp</a></button>
+                        <% } %>
+
+                </span>
+            </div>
+        </div>
+    </nav>
+
+
+

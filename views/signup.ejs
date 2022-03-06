@@ -1,0 +1,110 @@
+<%- include('partials/header'); -%>
+
+<!-- <form >
+  <h2>Sign Up</h2>
+  <label for="email">Email</label>
+  <input type="text" name="email" value="<%=email%>" disabled required />
+  <div class="email error"></div>
+  <label for="password">Password</label>
+  <input type="password" name="password" required />
+  <label for="confirm_password">Confirm Password</label>
+  <input type="password" name="confirm_password" required />
+  <div class="password error"></div>
+  <button>Sign Up</button>
+</form> -->
+
+
+<div style="min-height: 3rem;"></div>
+<div   role="dialog">
+  <div class="modal-dialog modal-lg" role="content">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title">Login</h4>
+              
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="email" class="form-label" disabled>Email address</label>
+                <input type="text" class="form-control" name="email"  value="<%=email%>" disabled>
+                <div class="email error"></div>
+                
+              </div>
+
+
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                <div class="password error"></div>
+              </div>
+
+
+              
+              <div class="mb-3">
+                  <label for="confirm_password" class="form-label">Confirm Password</label>
+                  <input type="password" name="confirm_password" class="form-control" required />
+                  <div class="password error"></div>
+              </div>
+
+              
+              <button style="background-color:#582bbb; border-color: #582bbb;"  type="submit" class="btn btn-primary btn-md">&nbsp;SignUp&nbsp;</button>
+            </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<% let Email=email%>
+<%- include('partials/footer'); -%>
+
+<script>
+
+
+  const form = document.querySelector('form');
+  const passwordError = document.querySelector('.password.error');
+  const emailError = document.querySelector('.email.error');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    // get values
+    const email = form.email.value;
+    const password = form.password.value;
+    if (form.password.value != form.confirm_password.value) {
+
+      passwordError.textContent = "password do not match";
+
+    }
+    else {
+      const Email = "<%=email%>";
+      // reset errors
+      emailError.textContent = '';
+      passwordError.textContent = '';
+
+      
+
+      try {
+        const email = Email;
+        const res = await fetch('/verify-sucess', {
+          method: 'POST',
+          body: JSON.stringify({ email, password }),
+          headers: { 'Content-Type': 'application/json' }
+        });
+        const data = await res.json();
+        console.log(data);
+        if (data.errors) {
+          emailError.textContent = data.errors.email;
+          passwordError.textContent = data.errors.password;
+        }
+        if (data.user) {
+          location.assign('/');
+        }
+
+      }
+      catch (err) {
+        console.log(err);
+      }
+    }
+
+  });
+</script>

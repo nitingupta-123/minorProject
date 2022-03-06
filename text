@@ -1,0 +1,7 @@
+1. agar user ko delete kr de database se aur cookies set h browser mein to user authenticate ho jata h ,jabki nahi hona
+chahiye , to check kro cookies mein jo id h vo id db mein bhi h kya.
+
+2. prevent default ko acchae se padho
+
+3. read about lodash and cors
+

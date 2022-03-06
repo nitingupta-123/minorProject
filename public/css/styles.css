@@ -1,0 +1,47 @@
+
+body {
+  padding: 50px 0px 0px 0px;
+  z-index: 0;
+  background-color: #fff9f3;
+ }
+
+.line{
+  
+    width: 4rem;
+    height: 8px;
+   
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: #79ceca;
+    border: 0 none;
+    border-radius: 5px;
+}
+
+
+.navbar-dark {
+  background-color: #582bbb
+  ; }
+
+  .error{
+    color: #ff0099;
+    margin: 10px 2px;
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+  
+  .message{
+    color: #09ff00b7;
+    margin: 10px 2px;
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+
+
+
+.modal-header {
+  background: #582bbb;
+  color: floralwhite; }
+  
+
+.modal-body {
+  background: #fff9f3; }
